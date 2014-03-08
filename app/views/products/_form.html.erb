@@ -1,0 +1,11 @@
+<%= simple_form_for @product, :html => { :class => 'form-horizontal', :multipart=>true } do |f| %>
+  <%= f.input :product_id %>
+  <%= f.input :product_name %>
+  <%= f.label :product_logo %>
+  <%= f.file_field :product_logo %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn' %>
+  </div>
+<% end %>

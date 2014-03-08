@@ -6,13 +6,16 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql', '2.8.1'
-gem "rails-backbone"
+
+gem 'simple_form', "~> 2.1.0" #rails g simple_form:install --bootstrap
+gem 'less-rails', "~> 2.3.3" 
+gem 'twitter-bootstrap-rails', "~> 2.2.6" # rails g bootstrap:themed tablename -f
+gem 'therubyracer'
 gem 'devise', '1.4.9'
+gem "paperclip", "~> 4.1"
 gem 'omniauth-facebook'
-gem 'omniauth-oauth2'
-gem 'omniauth-twitter'
-# gem 'omniauth', '0.2.0'
 gem 'sinatra'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

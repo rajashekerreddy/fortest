@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140304095140) do
+ActiveRecord::Schema.define(:version => 20140308105240) do
 
   create_table "gtpls", :force => true do |t|
     t.string   "attributes"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(:version => 20140304095140) do
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.integer  "product_id"
+    t.string   "product_name"
+    t.string   "product_logo"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.string   "product_logo_file_name"
+    t.string   "product_logo_content_type"
+    t.integer  "product_logo_size"
+    t.datetime "product_logo_updated_at"
   end
 
   create_table "users", :force => true do |t|

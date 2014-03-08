@@ -1,10 +1,17 @@
 Blog::Application.routes.draw do
   
+  # resources :products
+
+  resources :products do
+    collection do
+      get "home"
+    end
+  end
+
 
   devise_for :users
 
   resources :gtpls
-  resources :posts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -45,7 +52,7 @@ Blog::Application.routes.draw do
   #       get 'recent', :on => :collection
   #     end
   #   end
-root :to => "gtpls#index"
+root :to => "products#home"
 # get '/auth/:provider/callback', to: 'sessions#create'
  match 'auth/:provider/callback', to: 'sessions#create'
  match 'auth/failure', to: redirect('/')

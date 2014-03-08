@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h1>List Of Products</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Product Id</th>
+      <th>Product Names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%s=0%>
+    <% @products.each do |product| %>
+      <tr>
+          <td><%= s+=1 %></td>
+          <td><%= product.product_id %></td>
+          <td><%= product.product_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

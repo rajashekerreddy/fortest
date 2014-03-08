@@ -3,18 +3,16 @@
 <head>
   <title>Blog</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application.js" %>
+  <%= javascript_include_tag "application" %>
 <!-- <script src="http://connect.facebook.net/en_US/all.js"></script>  -->
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!-- <fb:like layout="button_count" show_faces="true" width="80" font="verdana"></fb:like> -->
-
 
 <% if user_signed_in? %>
     Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
   <% else %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
   <% end %>
       </div>
@@ -23,19 +21,18 @@
       <% end %>
 
 <%= yield %>
+<% if params[:action] == "home" %>
 <div id="user_nav">
   <% if current_user %>
     Signed in as <strong><%= current_user.name %></strong>!
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %><br >
-	<%= link_to "Sign in with Twitter", "/auth/twitter" %>
   <% end %>
 </div>
+  <% end %>
 </body>
 <script type="text/javascript">
- // FB.init({appId:'279110128870876', cookie:true, oauth:true,status:true, xfbml:true});
-
 
  jQuery(function() {
   $('body').prepend('<div id="fb-root"></div>');

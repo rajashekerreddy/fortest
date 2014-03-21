@@ -8,7 +8,7 @@ Blog::Application.routes.draw do
     end
   end
 
-
+  resources :posts
   devise_for :users
 
   resources :gtpls
